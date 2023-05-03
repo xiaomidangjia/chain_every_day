@@ -18,6 +18,7 @@ from matplotlib.font_manager import FontProperties
 #import matplotlib.text.Text
 from matplotlib import font_manager as fm, rcParams
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 #fpath = os.path.join(rcParams["datapath"], "fonts/ttf/cmr10.ttf")
 prop = fm.FontProperties(fname='/home/tione/notebook/picture/SimHei.ttf')
