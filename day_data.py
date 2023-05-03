@@ -312,7 +312,7 @@ eth_data = eth_data.reset_index(drop=True)
 combine_data = eth_data.merge(btc_data,how='left',on=['date'])
 combine_data['per'] = combine_data['Price_x']/combine_data['Price_y']
 
-fig_new.text(0.2, 0.90, f'昨日ETH/BTC价格比:\n'
+fig_new.text(0.3, 0.90, f'昨日ETH/BTC价格比:\n'
                      f'昨日矿工总收入7日环比增加:\n'
                      f'昨日持币大于1000地址数7日环比增加:\n'
                      f'昨日交易所BTC净流入:\n'
@@ -324,11 +324,11 @@ b3 = (combine_data['min_1k_count'][len(combine_data)-1]-combine_data['min_1k_cou
 b4 = combine_data['net_volume'][len(combine_data)-1]
 b5 = np.sum(combine_data['revenue_sum'][len(combine_data)-8:len(combine_data)-1])
 
-fig_new.text(0.21, 0.90, f'{b1:.2}    \n'
+fig_new.text(0.31, 0.90, f'{b1:.2}    \n'
                      f'{b2: .2%}    \n'
                      f'{b3:.2%}    \n'
-                     f'{b4:.2}\n'
-                     f'{b5:.1} \n')
+                     f'{round(b4,2)}个}\n'
+                     f'{round(b5,2)}个} \n')
 
 # ===================================
 
@@ -394,17 +394,17 @@ c3 = usdt_data['net_volume'][len(usdt_data)-1]/100000000
 c4 = np.sum(usdt_data['net_volume'][len(usdt_data)-8:len(usdt_data)-1])/100000000
 c5 = balance_us_data['balance_us'][len(balance_us_data)-1]
 
-fig_new.text(0.67, 0.90, f'昨日USDT总市值:\n'
+fig_new.text(0.77, 0.90, f'昨日USDT总市值:\n'
                      f'USDT市值7日环比增加:\n'
                      f'昨日交易所USDT净流入:\n'
                      f'交易所USDT7日总流入:\n'
                      f'美国政府持有BTC数量:\n', ha='right',fontproperties = prop)
 
-fig_new.text(0.68, 0.90, f'{round(c1,2)} \n'
+fig_new.text(0.78, 0.90, f'{round(c1,2)}美金 \n'
                      f'{c2: .2%}    \n'
-                     f'{c3:.2%}    \n'
-                     f'{c4:.2%}\n'
-                     f'{c5:.1} \n')
+                     f'{round(c3,2)}个}    \n'
+                     f'{round(c4,2)}个}\n'
+                     f'{round(c5,2)}个 \n')
 
 ax1 = fig_new.add_axes([0.05, 0.75, 0.31, 0.13])
 ax2 = fig_new.add_axes([0.395, 0.75, 0.31, 0.13])
