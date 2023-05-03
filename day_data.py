@@ -1137,6 +1137,33 @@ v1= sub_res_df['7MA aSOPR'][1]
 v2= sub_res_df['7MA aSOPR'][2]
 v3= sub_res_df['7MA aSOPR'][3]
 
+
+url_address = ['https://api.glassnode.com/v1/metrics/indicators/puell_multiple',
+                'https://api.glassnode.com/v1/metrics/indicators/sopr_adjusted']
+url_name = ['Puell Multiple', 'aSOPR']
+# insert your API key here
+API_KEY = '26BLocpWTcSU7sgqDdKzMHMpJDm'
+data_list = []
+for num in range(len(url_name)):
+    print(num)
+    addr = url_address[num]
+    name = url_name[num]
+    # make API request
+    res_addr = requests.get(addr,params={'a': 'BTC', 'api_key': API_KEY})
+    # convert to pandas dataframe
+    ins = pd.read_json(res_addr.text, convert_dates=['t'])
+    ins['date'] =  ins['t']
+    ins[name] =  ins['v']
+    ins = ins[['date',name]]
+    data_list.append(ins)
+
+result_data = data_list[0][['date']]
+for i in range(len(data_list)):
+    df = data_list[i]
+    result_data = result_data.merge(df,how='left',on='date')
+#last_data = result_data[(result_data.date>='2016-01-01') & (result_data.date<='2020-01-01')]
+last_data = result_data[(result_data.date>='2012-10-01')]
+last_data = last_data.sort_values(by=['date'])
 last_data = last_data.reset_index(drop=True)
 v4 = last_data['aSOPR'][len(last_data)-1]
 
