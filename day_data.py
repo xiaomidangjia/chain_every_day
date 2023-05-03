@@ -1142,7 +1142,7 @@ v4 = last_data['aSOPR'][len(last_data)-1]
 
 if v1 < 1 and v2 < 1 and v3 < 1:
     celue = '抄底'
-elif v4 < 1
+elif v4 < 1:
     celue = '定投'
 else:
     celue = '观察'
