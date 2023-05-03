@@ -245,7 +245,7 @@ fig_new = plt.figure(figsize=(12, 20), facecolor=(0.82, 0.83, 0.85))
 
 title_asset_pool = str(datetime.datetime.now().strftime('%Y-%m-%d'))
 plt.suptitle(f'比特币数据日报:  {title_asset_pool}',
-             fontsize=14,
+             fontsize=20,
              fontweight=10,
              fontproperties = prop)
 
@@ -312,7 +312,7 @@ eth_data = eth_data.reset_index(drop=True)
 combine_data = eth_data.merge(btc_data,how='left',on=['date'])
 combine_data['per'] = combine_data['Price_x']/combine_data['Price_y']
 
-fig_new.text(0.3, 0.90, f'昨日ETH/BTC价格比:\n'
+fig_new.text(0.4, 0.90, f'昨日ETH/BTC价格比:\n'
                      f'昨日矿工总收入7日环比增加:\n'
                      f'昨日持币大于1000地址数7日环比增加:\n'
                      f'昨日交易所BTC净流入:\n'
@@ -324,7 +324,7 @@ b3 = (combine_data['min_1k_count'][len(combine_data)-1]-combine_data['min_1k_cou
 b4 = combine_data['net_volume'][len(combine_data)-1]
 b5 = np.sum(combine_data['revenue_sum'][len(combine_data)-8:len(combine_data)-1])
 
-fig_new.text(0.31, 0.90, f'{b1:.2}    \n'
+fig_new.text(0.41, 0.90, f'{b1:.2}    \n'
                      f'{b2: .2%}    \n'
                      f'{b3:.2%}    \n'
                      f'{round(b4,2)}个\n'
