@@ -685,7 +685,7 @@ usa_interest_rate = ak.macro_bank_usa_interest_rate()
 usa_interest_rate_date = usa_interest_rate['日期'][len(usa_interest_rate)-1]
 usa_interest_rate_date = str(pd.to_datetime(usa_interest_rate_date))[0:10]
 # 柱状图
-name = ['加息20%','不加息']
+name = ['add 20%','not add']
 count = [0.76,0.24]
 
 ax4.bar(name,count,0.6,color='lightskyblue')
@@ -699,7 +699,7 @@ ax4.set_ylabel("概率",fontsize=14,fontproperties=prop)
 ax4.set_title("CME美联储加息预测",fontproperties=prop,fontsize=14)
 
 #======制定第5区域
-eco_df = pd.read_csv('us_ec_data.csv')
+eco_df = pd.read_csv('us_ec_data.csv',encoding='utf-8-sig')
 #plt.rcParams['font.sans-serif'] = prop
 #plt.rcParams['axes.unicode_minus'] = False #用来正常显示负号
 
@@ -1112,7 +1112,55 @@ plt.close()
 import telegram
 content = '/root/chain_every_day/' + name
 bot = telegram.Bot(token='6219784883:AAE3YXlXvxNArWJu-0qKpKlhm4KaTSHcqpw')
-bot.sendDocument(chat_id='-840309715', document=open(content, 'rb'))
+
+eco_df = eco_df.reset_index(drop=True)
+eco_df['event'] = eco_df.iloc[:,0]
+eco_df['importent'] = eco_df.iloc[:,1]
+eco_df['next_time'] = eco_df.iloc[:,2]
+eco_df['predict'] = eco_df.iloc[:,3]
+eco_df['front'] = eco_df.iloc[:,4]
+
+flag = 0
+for i in range(len(eco_df)):
+    data = eco_df['next_time'][i]
+    if str(data) == str(title_asset_pool):
+        flag = 1
+        event = eco_df['event'][i]
+        importent = eco_df['importent'][i]
+        predict = eco_df['predict'][i]
+        front = eco_df['front'][i]
+    else:
+        continue
+
+sub_res_df = sub_res_df.reset_index(drop=True)
+v1= sub_res_df['7MA aSOPR'][1]
+v2= sub_res_df['7MA aSOPR'][2]
+v3= sub_res_df['7MA aSOPR'][3]
+
+last_data = last_data.reset_index(drop=True)
+v4 = last_data['aSOPR'][len(last_data)-1]
+
+if v1 < 1 and v2 < 1 and v3 < 1:
+    celue = '抄底'
+elif v4 < 1
+    celue = '定投'
+else:
+    celue = '观察'
+
+
+if flag == 1:
+    text = '今日重要提示：%s，重要程度：%s，前值：%s，预测值：%s，数据公布前后比特币价格波动很大，注意控制合约风险。'%(event,importent,front,predict)
+else:
+    text = '今日比特币现货买入策略：%s'%(celue)
+
+s = 1
+while s < 3600*6+200:
+    if s == 1 or s == 3600*6:
+        bot.sendDocument(chat_id='-840309715', document=open(content, 'rb'))
+        bot.sendMessage(chat_id='-840309715', text=text)
+    else:
+        continue
+    s += 1
 
 
 
