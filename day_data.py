@@ -691,7 +691,7 @@ count = [0.76,0.24]
 ax4.bar(name,count,0.6,color='lightskyblue')
 for i in range(len(name)):
     # 金牌
-    ax4.text(name[i],count[i], "%.1f%%" % (round(float(count[i]) * 100, 2)),va="bottom",ha="center",fontsize=12)
+    ax4.text(name[i],count[i], "%.1f%%" % (round(float(count[i]) * 100, 2)),va="bottom",ha="center",fontsize=12,fontproperties=prop)
 # plt.tick_params(axis='both', labelsize=14)
 #ax4.set_xticks(fontsize=14,fontproperties=prop)
 ax4.set_xlabel(usa_interest_rate_date+"加息幅度",fontsize=14,fontproperties=prop)
