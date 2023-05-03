@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 #fpath = os.path.join(rcParams["datapath"], "fonts/ttf/cmr10.ttf")
-prop = fm.FontProperties(fname='/home/tione/notebook/picture/SimHei.ttf')
+prop = fm.FontProperties(fname='/root/chain_every_day/SimHei.ttf')
 
 # ======= 正式开始执行
 
