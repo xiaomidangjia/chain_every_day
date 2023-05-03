@@ -327,8 +327,8 @@ b5 = np.sum(combine_data['revenue_sum'][len(combine_data)-8:len(combine_data)-1]
 fig_new.text(0.31, 0.90, f'{b1:.2}    \n'
                      f'{b2: .2%}    \n'
                      f'{b3:.2%}    \n'
-                     f'{round(b4,2)}个}\n'
-                     f'{round(b5,2)}个} \n')
+                     f'{round(b4,2)}\n'
+                     f'{round(b5,2)} \n')
 
 # ===================================
 
@@ -402,8 +402,8 @@ fig_new.text(0.77, 0.90, f'昨日USDT总市值:\n'
 
 fig_new.text(0.78, 0.90, f'{round(c1,2)}美金 \n'
                      f'{c2: .2%}    \n'
-                     f'{round(c3,2)}个}    \n'
-                     f'{round(c4,2)}个}\n'
+                     f'{round(c3,2)}个    \n'
+                     f'{round(c4,2)}个\n'
                      f'{round(c5,2)}个 \n')
 
 ax1 = fig_new.add_axes([0.05, 0.75, 0.31, 0.13])
