@@ -246,7 +246,8 @@ fig_new = plt.figure(figsize=(12, 20), facecolor=(0.82, 0.83, 0.85))
 title_asset_pool = str(datetime.datetime.now().strftime('%Y-%m-%d'))
 plt.suptitle(f'比特币数据日报:  {title_asset_pool}',
              fontsize=14,
-             fontweight=10)
+             fontweight=10,
+             fontproperties = prop)
 
 # 投资回测结果的评价指标全部被打印在图表上，所有的指标按照表格形式打印
 # 为了实现表格效果，指标的标签和值分成两列打印，每一列的打印位置相同
@@ -315,7 +316,7 @@ fig_new.text(0.2, 0.90, f'昨日ETH/BTC价格比:\n'
                      f'昨日矿工总收入7日环比增加:\n'
                      f'昨日持币大于1000地址数7日环比增加:\n'
                      f'昨日交易所BTC净流入:\n'
-                     f'交易所BTC7日总净流入:\n', ha='right')
+                     f'交易所BTC7日总净流入:\n', ha='right',fontproperties = prop)
 
 b1 = combine_data['per'][len(combine_data)-1]
 b2 = (combine_data['revenue_sum'][len(combine_data)-1]-combine_data['revenue_sum'][len(combine_data)-8])/combine_data['revenue_sum'][len(combine_data)-1]
@@ -397,9 +398,9 @@ fig_new.text(0.67, 0.90, f'昨日USDT总市值:\n'
                      f'USDT市值7日环比增加:\n'
                      f'昨日交易所USDT净流入:\n'
                      f'交易所USDT7日总流入:\n'
-                     f'美国政府持有BTC数量:\n', ha='right')
+                     f'美国政府持有BTC数量:\n', ha='right',fontproperties = prop)
 
-fig_new.text(0.68, 0.90, f'{c1:.2}    \n'
+fig_new.text(0.68, 0.90, f'{round(c1,2)} \n'
                      f'{c2: .2%}    \n'
                      f'{c3:.2%}    \n'
                      f'{c4:.2%}\n'
