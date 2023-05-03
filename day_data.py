@@ -327,8 +327,8 @@ b5 = np.sum(combine_data['revenue_sum'][len(combine_data)-8:len(combine_data)-1]
 fig_new.text(0.31, 0.90, f'{b1:.2}    \n'
                      f'{b2: .2%}    \n'
                      f'{b3:.2%}    \n'
-                     f'{round(b4,2)}\n'
-                     f'{round(b5,2)} \n')
+                     f'{round(b4,2)}个\n'
+                     f'{round(b5,2)}个 \n',fontproperties = prop)
 
 # ===================================
 
@@ -400,11 +400,11 @@ fig_new.text(0.77, 0.90, f'昨日USDT总市值:\n'
                      f'交易所USDT7日总流入:\n'
                      f'美国政府持有BTC数量:\n', ha='right',fontproperties = prop)
 
-fig_new.text(0.78, 0.90, f'{round(c1,2)}美金 \n'
+fig_new.text(0.78, 0.90, f'{round(c1,2)}亿美金 \n'
                      f'{c2: .2%}    \n'
-                     f'{round(c3,2)}个    \n'
-                     f'{round(c4,2)}个\n'
-                     f'{round(c5,2)}个 \n')
+                     f'{round(c3,2)}亿    \n'
+                     f'{round(c4,2)}亿\n'
+                     f'{round(c5,2)}个 \n',fontproperties = prop)
 
 ax1 = fig_new.add_axes([0.05, 0.75, 0.31, 0.13])
 ax2 = fig_new.add_axes([0.395, 0.75, 0.31, 0.13])
@@ -1105,7 +1105,7 @@ ax14.legend(loc='upper left', fontsize=5)
 ax14.set_ylabel("7MA aSOPR",fontsize=10)
 
 name = str(title_asset_pool) + '比特币链上数据一览图' + '.png'
-fig_new.savefig(name)
+fig_new.savefig(name, dpi=200, bbox_inches='tight')
 plt.close()
 
 
