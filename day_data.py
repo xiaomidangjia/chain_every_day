@@ -1201,14 +1201,9 @@ if flag == 1:
 else:
     text = '【重要提示】今日比特币现货买入策略：%s'%(celue)
 
-s = 1
-while s < 3600*6+200:
-    if s == 1 or s == 3600*6:
-        bot.sendDocument(chat_id='-840309715', document=open(content, 'rb'))
-        bot.sendMessage(chat_id='-840309715', text=text)
-    else:
-        continue
-    s += 1
+bot.sendDocument(chat_id='-840309715', document=open(content, 'rb'))
+bot.sendMessage(chat_id='-840309715', text=text)
+
 
 
 
