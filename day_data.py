@@ -1104,6 +1104,10 @@ ax14.tick_params(labelsize=10)
 ax14.legend(loc='upper left', fontsize=5)
 ax14.set_ylabel("7MA aSOPR",fontsize=10)
 
+fig_new.text(0.5, 0.5, '0xCarson出品，加V：shengxiaruchu009', transform=ax.transAxes,
+        fontsize=20, color='gray', alpha=0.5,
+        ha='center', va='center', rotation='30')
+
 name = str(title_asset_pool) + '比特币链上数据一览图' + '.png'
 fig_new.savefig(name, dpi=200, bbox_inches='tight')
 plt.close()
