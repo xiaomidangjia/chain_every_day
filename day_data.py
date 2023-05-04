@@ -1132,6 +1132,7 @@ for i in range(len(eco_df)):
     else:
         continue
 
+sub_res_df = res_df[['date','Puell Multiple','MVRV Z-Score','RHODL Ratio','Net Realized Profit/Loss','Percent Supply in Profit','7MA aSOPR','50MA aSOPR']][-4:]
 sub_res_df = sub_res_df.reset_index(drop=True)
 v1= sub_res_df['7MA aSOPR'][1]
 v2= sub_res_df['7MA aSOPR'][2]
@@ -1178,7 +1179,7 @@ else:
 if flag == 1:
     text = '今日重要提示：%s，重要程度：%s，前值：%s，预测值：%s，数据公布前后比特币价格波动很大，注意控制合约风险。'%(event,importent,front,predict)
 else:
-    text = '今日比特币现货买入策略：%s'%(celue)
+    text = '【重要提示】今日比特币现货买入策略：%s'%(celue)
 
 s = 1
 while s < 3600*6+200:
