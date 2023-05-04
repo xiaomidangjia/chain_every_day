@@ -1104,7 +1104,23 @@ ax14.tick_params(labelsize=10)
 ax14.legend(loc='upper left', fontsize=5)
 ax14.set_ylabel("7MA aSOPR",fontsize=10)
 
+fig_new.text(0.1, 0.8, '0xCarson出品，lian xi+V：shengxiaruchu009',
+        fontsize=50, color='gray', alpha=0.5,
+        ha='center', va='center', rotation='30',fontproperties = prop)
+
 fig_new.text(0.5, 0.5, '0xCarson出品，lian xi+V：shengxiaruchu009',
+        fontsize=50, color='gray', alpha=0.5,
+        ha='center', va='center', rotation='30',fontproperties = prop)
+
+fig_new.text(0.7, 0.3, '0xCarson出品，lian xi+V：shengxiaruchu009',
+        fontsize=50, color='gray', alpha=0.5,
+        ha='center', va='center', rotation='30',fontproperties = prop)
+
+fig_new.text(0.3, 0.3, '0xCarson出品，lian xi+V：shengxiaruchu009',
+        fontsize=50, color='gray', alpha=0.5,
+        ha='center', va='center', rotation='30',fontproperties = prop)
+
+fig_new.text(0.9, 0.8, '0xCarson出品，lian xi+V：shengxiaruchu009',
         fontsize=50, color='gray', alpha=0.5,
         ha='center', va='center', rotation='30',fontproperties = prop)
 
@@ -1183,7 +1199,7 @@ else:
 if flag == 1:
     text = '今日重要提示：%s，重要程度：%s，前值：%s，预测值：%s，数据公布前后比特币价格波动很大，注意控制合约风险。'%(event,importent,front,predict)
 else:
-    text = '【重要提示】今日比特币现货买入策略：%s'%(celue)
+    text = '\033[1;35;0m【重要提示】今日比特币现货买入策略：%s\033[0m'%(celue)
 
 s = 1
 while s < 3600*6+200:
