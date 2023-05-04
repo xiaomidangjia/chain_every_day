@@ -1199,7 +1199,7 @@ else:
 if flag == 1:
     text = '今日重要提示：%s，重要程度：%s，前值：%s，预测值：%s，数据公布前后比特币价格波动很大，注意控制合约风险。'%(event,importent,front,predict)
 else:
-    text = '\033[1;35;0m【重要提示】今日比特币现货买入策略：%s\033[0m'%(celue)
+    text = '【重要提示】今日比特币现货买入策略：%s'%(celue)
 
 s = 1
 while s < 3600*6+200:
