@@ -1104,48 +1104,10 @@ ax14.tick_params(labelsize=10)
 ax14.legend(loc='upper left', fontsize=5)
 ax14.set_ylabel("7MA aSOPR",fontsize=10)
 
-ax1.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
+fig_new.text(0.5, 0.5, '0xCarson出品，lian xi+V：shengxiaruchu009',
         fontsize=50, color='gray', alpha=0.5,
         ha='center', va='center', rotation='30',fontproperties = prop)
-ax2.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax3.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax4.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax5.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax6.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax7.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax8.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax9.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax10.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax11.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax12.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax13.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
-ax14.text(0.5, 0.95, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
-        fontsize=50, color='gray', alpha=0.5,
-        ha='center', va='center', rotation='30',fontproperties = prop)
+
 name = str(title_asset_pool) + '比特币链上数据一览图' + '.png'
 fig_new.savefig(name, dpi=200, bbox_inches='tight')
 plt.close()
