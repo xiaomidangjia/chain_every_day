@@ -1104,15 +1104,15 @@ ax14.tick_params(labelsize=10)
 ax14.legend(loc='upper left', fontsize=5)
 ax14.set_ylabel("7MA aSOPR",fontsize=10)
 
-fig_new.text(0.5, 0.1, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
+fig_new.text(0.5, 0.9, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
         fontsize=50, color='gray', alpha=0.5,
         ha='center', va='center', rotation='30',fontproperties = prop)
 
-fig_new.text(0.5, 0.2, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
+fig_new.text(0.5, 0.75, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
         fontsize=50, color='gray', alpha=0.5,
         ha='center', va='center', rotation='30',fontproperties = prop)
 
-fig_new.text(0.5, 0.3, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
+fig_new.text(0.5, 0.6, '0xCarson出品，lian xi+V：shengxiaruchu009', transform=ax.transAxes,
         fontsize=50, color='gray', alpha=0.5,
         ha='center', va='center', rotation='30',fontproperties = prop)
 
