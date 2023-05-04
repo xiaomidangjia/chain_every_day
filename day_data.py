@@ -319,8 +319,8 @@ fig_new.text(0.4, 0.90, f'昨日ETH/BTC价格比:\n'
                      f'交易所BTC7日总净流入:\n', ha='right',fontproperties = prop)
 
 b1 = combine_data['per'][len(combine_data)-1]
-b2 = (combine_data['revenue_sum'][len(combine_data)-1]-combine_data['revenue_sum'][len(combine_data)-8])/combine_data['revenue_sum'][len(combine_data)-1]
-b3 = (combine_data['min_1k_count'][len(combine_data)-1]-combine_data['min_1k_count'][len(combine_data)-8])/combine_data['min_1k_count'][len(combine_data)-1]
+b2 = (combine_data['revenue_sum'][len(combine_data)-1]-combine_data['revenue_sum'][len(combine_data)-8])/combine_data['revenue_sum'][len(combine_data)-8]
+b3 = (combine_data['min_1k_count'][len(combine_data)-1]-combine_data['min_1k_count'][len(combine_data)-8])/combine_data['min_1k_count'][len(combine_data)-8]
 b4 = combine_data['net_volume'][len(combine_data)-1]
 b5 = np.sum(combine_data['revenue_sum'][len(combine_data)-8:len(combine_data)-1])
 
