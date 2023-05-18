@@ -1159,7 +1159,7 @@ plt.close()
 
 
 import telegram
-content = '/root/chain_every_day/' + name
+content = '/root/chain_every_day/' + fig_name
 bot = telegram.Bot(token='6219784883:AAE3YXlXvxNArWJu-0qKpKlhm4KaTSHcqpw')
 
 eco_df = eco_df.reset_index(drop=True)
