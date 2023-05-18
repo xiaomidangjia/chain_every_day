@@ -19,7 +19,36 @@ from matplotlib.font_manager import FontProperties
 from matplotlib import font_manager as fm, rcParams
 import matplotlib.pyplot as plt
 import seaborn as sns
+from dingtalkchatbot.chatbot import DingtalkChatbot
+webhook = 'https://oapi.dingtalk.com/robot/send?access_token=a9789d2739819eab19b07dcefe30df3fcfd9f815bf198ced54c71c557f09e7d9'
+from qiniu import Auth, put_file, etag
+def gmt_img_url(key=None,local_file=None,**kwargs):
+    # refer:https://developer.qiniu.com/kodo/sdk/1242/python
+    # key:上传后保存的文件名；
+    # local_file:本地图片路径，fullpath
+    # 遗留问题：如果服务器图片已存在，需要对保存名进行重命名
 
+    #需要填写你的 Access Key 和 Secret Key
+    access_key = 'svjFs68isTvptqveLl9xBADP9v8s0jZdUzoGe0-U'
+    secret_key = 'XRqt6RgoeK9-hZmKyPjPuFQkeYcU0cPNVgKWEl7l'
+
+    #构建鉴权对象
+    q = Auth(access_key, secret_key)
+
+    #要上传的空间
+    bucket_name = 'carsonlee'
+
+    #生成上传 Token，可以指定过期时间等
+    token = q.upload_token(bucket_name, key)
+
+    #要上传文件的本地路径
+    ret, info = put_file(token, key, local_file)
+
+    base_url = 'http://ruusug320.hn-bkt.clouddn.com'    #七牛测试url
+    url = base_url + '/' + key
+    #private_url = q.private_download_url(url)
+
+    return url
 #fpath = os.path.join(rcParams["datapath"], "fonts/ttf/cmr10.ttf")
 prop = fm.FontProperties(fname='/root/chain_every_day/SimHei.ttf')
 
@@ -1204,6 +1233,25 @@ else:
 bot.sendDocument(chat_id='-840309715', document=open(content, 'rb'))
 bot.sendMessage(chat_id='-840309715', text=text)
 
+
+#推送钉钉群
+
+time_str = str(time.time())[0:10]
+key = 'blockchain_' + time_str + '.png'
+img_url = gmt_img_url(key=key, local_file=name)
+
+xiaoding = DingtalkChatbot(webhook)
+if flag == 1:
+    txt = '【今日重要提示】 @所有人\n' \
+          '> %s，重要程度：%s，前值：%s，预测值：%s，数据公布前后比特币价格波动很大，注意控制合约风险。\n\n' \
+          '> ![数据监控结果](%s)\n'\
+          '> ###### 币coin搜索0xCarson,关注欧易实盘。 \n'%(event,importent,front,predict,img_url)
+else:
+    txt = '【今日重要提示】 @所有人\n' \
+          '> 比特币现货买入策略：%s \n\n'\
+          '> ![数据监控结果](%s)\n'\
+          '> ###### 币coin搜索0xCarson,关注欧易实盘。 \n'%(celue,img_url)
+xiaoding.send_markdown(title='数据监控', text=txt);
 
 
 
