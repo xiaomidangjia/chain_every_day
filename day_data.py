@@ -1153,8 +1153,8 @@ fig_new.text(0.9, 0.8, '0xCarson出品，lian xi+V：shengxiaruchu009',
         fontsize=50, color='gray', alpha=0.5,
         ha='center', va='center', rotation='30',fontproperties = prop)
 
-name = str(title_asset_pool) + '比特币链上数据一览图' + '.png'
-fig_new.savefig(name, dpi=200, bbox_inches='tight')
+fig_name = str(title_asset_pool) + '比特币链上数据一览图' + '.png'
+fig_new.savefig(fig_name, dpi=200, bbox_inches='tight')
 plt.close()
 
 
@@ -1238,7 +1238,7 @@ bot.sendMessage(chat_id='-840309715', text=text)
 
 time_str = str(time.time())[0:10]
 key = 'blockchain_' + time_str + '.png'
-img_url = gmt_img_url(key=key, local_file=name)
+img_url = gmt_img_url(key=key, local_file=fig_name)
 
 xiaoding = DingtalkChatbot(webhook)
 if flag == 1:
