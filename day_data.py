@@ -20,7 +20,7 @@ from matplotlib import font_manager as fm, rcParams
 import matplotlib.pyplot as plt
 import seaborn as sns
 from dingtalkchatbot.chatbot import DingtalkChatbot
-webhook = 'https://oapi.dingtalk.com/robot/send?access_token=a9789d2739819eab19b07dcefe30df3fcfd9f815bf198ced54c71c557f09e7d9'
+webhook = 'https://oapi.dingtalk.com/robot/send?access_token=69d2f134c31ced0426894ed975f29b519c1a8bd163a808840ef5812c5a0477a1'
 from qiniu import Auth, put_file, etag
 def gmt_img_url(key=None,local_file=None,**kwargs):
     # refer:https://developer.qiniu.com/kodo/sdk/1242/python
@@ -1243,14 +1243,14 @@ img_url = gmt_img_url(key=key, local_file=fig_name)
 xiaoding = DingtalkChatbot(webhook)
 if flag == 1:
     txt = '【今日重要提示】 @所有人\n' \
-          '> %s，重要程度：%s，前值：%s，预测值：%s，数据公布前后比特币价格波动很大，注意控制合约风险。\n\n' \
+          '> %s，重要程度：%s，前值：%s，预测值：%s，数据公布前后大饼价格波动很大，注意控制合约风险。\n\n' \
           '> ![数据监控结果](%s)\n'\
-          '> ###### 币coin搜索0xCarson,关注欧易实盘。 \n'%(event,importent,front,predict,img_url)
+          '> ###### 币coin搜索0xCarson,关注OKX实盘。 \n'%(event,importent,front,predict,img_url)
 else:
     txt = '【今日重要提示】 @所有人\n' \
-          '> 比特币现货买入策略：%s \n\n'\
+          '> 大饼现货买入策略：%s \n\n'\
           '> ![数据监控结果](%s)\n'\
-          '> ###### 币coin搜索0xCarson,关注欧易实盘。 \n'%(celue,img_url)
+          '> ###### 币coin搜索0xCarson,关注OKX实盘。 \n'%(celue,img_url)
 xiaoding.send_markdown(title='数据监控', text=txt);
 
 
