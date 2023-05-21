@@ -715,7 +715,7 @@ usa_interest_rate_date = usa_interest_rate['日期'][len(usa_interest_rate)-1]
 usa_interest_rate_date = str(pd.to_datetime(usa_interest_rate_date))[0:10]
 # 柱状图
 name = ['add 20%','not add']
-count = [0.76,0.24]
+count = [0.174,0.826]
 
 ax4.bar(name,count,0.6,color='lightskyblue')
 for i in range(len(name)):
